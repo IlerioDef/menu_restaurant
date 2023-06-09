@@ -1,0 +1,40 @@
+    {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>at Ilerio Def's</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<nav class="w-1/6 border-b-2 h-full flex-wrap py-3">
+    <div >
+        <ul class="flex inline-block h-full justify-between px-3 uppercase">
+            <li class="rounded-xl bg-gray-400 px-3">
+                <a href="#">Menu</a>
+            </li>
+            <li class="rounded-xl bg-gray-400 px-3">
+                <a href="#">Your order</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<div class=" flex w-full h-full  bg-white border-b-2 pt-5">
+    <div class="flex-wrap justify-center bg-white">
+        <div class="flex-wrap justify-center">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+<footer class="border-2 p-10 bg-gray-300 border-teal-500 flex">
+    <div class="flex-auto pt-5">
+    </div>
+
+</footer>
+</body>
+</html>
