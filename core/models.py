@@ -61,17 +61,9 @@ class Item(models.Model):
 
         return thumbnail
 
-    # def get_slug(self):
-    #     if self.slug:
-    #         return self.slug
-    #     else:
-    #         if self.name:
-    #             slug_name = self.name.lower().split(" ")
-    #             slug = "-".join(slug_name)
-    #
-    #             if len(slug) > 50: # 50 is a default Django.SlugField length. To be redone
-    #                 slug = slug[:51]
-    #
-    #             self.slug = slug
-    #
-    #         return self.slug
+    def get_allergen_list(self):
+        if Item.allergen:
+            allergen_list = []
+            allergens = Item.allergen.all()
+
+            return list(allergens)

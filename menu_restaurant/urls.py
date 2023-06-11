@@ -17,9 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from core.views import core
+from core.views import menu
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', core, name='core'),
+    path('', menu, name='menu'),
 ]

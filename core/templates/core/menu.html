@@ -1,0 +1,13 @@
+{% extends 'core/core.html' %}
+{% block content %}
+
+
+    {% for item in menu.values %}
+        <div class="border-2 flex-row border-red-500 text-center bg-gray-400 w-full">
+            {{ item.name }} {{ item.price }} {{ item.allergen }}
+        <img src="item.get_thumbnail">
+        </div>
+    {% endfor %}
+
+
+{% endblock %}
