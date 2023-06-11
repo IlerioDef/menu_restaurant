@@ -11,32 +11,10 @@ def core(request):
 
 def menu(request):
     item = Item.objects.all()
-    allergen = Allergen.objects.all()
-    dictionary = {}
-
-    for i in item:
-        internal_dictionary = {
-
-                 "id": i.id,
-                 'name': i.name,
-                 'slug': i.slug,
-                 'category': (i.category.id, i.category.name),
-                 'price': i.price,
-                 'allergen': [x.name for x in Allergen.objects.filter(item=i.id)],
-                 'image': i.image,
-                 'thumbnail': i.get_thumbnail(),
-                 'food_energy': i.food_energy,
-                 'description': i.description,
-
-             }
-        dictionary[i.id] = internal_dictionary
-
-
-
+    allergen = "yes"
     context = {
-        # 'id': item.id,
-        'menu': dictionary,
-        # 'category' : item.category,
+        'menu': item,
     }
     print('а это контекст, который передается', context)
     return render(request, "core/menu.html", context)
+

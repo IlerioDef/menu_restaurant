@@ -62,8 +62,15 @@ class Item(models.Model):
         return thumbnail
 
     def get_allergen_list(self):
-        if Item.allergen:
-            allergen_list = []
-            allergens = Item.allergen.all()
+        if self.allergen:
 
-            return list(allergens)
+            allergen_list = []
+            for e in Allergen.objects.filter(item__id=self.id).get():
+
+                allergen = e
+                allergen_list += e
+
+        return allergen_list
+
+    def get_price(self):
+            return self.price / 100
