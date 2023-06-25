@@ -10,11 +10,11 @@ def core(request):
 
 
 def menu(request):
-    item = Item.objects.all()
-    allergen = "yes"
+    menu = Item.objects.all()
+    allergens = Allergen.objects.all()
     context = {
-        'menu': item,
+        'menu': menu,
+        'allergens': allergens,
     }
-    print('а это контекст, который передается', context)
-    return render(request, "core/menu.html", context)
 
+    return render(request, "core/menu.html", context)

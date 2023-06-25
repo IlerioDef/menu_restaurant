@@ -12,12 +12,15 @@
 <body>
 <nav class="w-1/6 border-b-2 h-full flex-wrap py-3">
     <div >
-        <ul class="flex inline-block h-full justify-between px-3 uppercase">
+        <ul class="inline h-full justify-between px-3 uppercase">
             <li class="rounded-xl bg-gray-400 px-3">
-                <a href="#">Menu</a>
+                <a href="{%  url 'menu' %}">Menu</a>
             </li>
             <li class="rounded-xl bg-gray-400 px-3">
-                <a href="#">Your order</a>
+                <a href="{% url 'order' %}">Your order</a>
+                {% for items in cart %}
+                <div class="lowercase bg-orange-400 rounded-xl">{{ order | length }} item(s)</div>
+                {% endfor %}
             </li>
         </ul>
 

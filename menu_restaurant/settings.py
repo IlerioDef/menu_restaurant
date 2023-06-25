@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# SECURITY WARNING: keep the secret request used in production secret!
 SECRET_KEY = 'django-insecure-!xcz0&3usa#_-62%=6ann$7xoo506ua3%v5r(oqq5q0cvwl57q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -27,10 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SESSION_COOKIE_AGE = 86400
+ORDER_SESSION_ID = 'order'
+
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'order',
     'core',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -64,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'order.context_processors.order',
             ],
         },
     },
@@ -119,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Default primary key field type
+# Default primary request field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
