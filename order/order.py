@@ -64,3 +64,11 @@ class Order(object):
             quantity += int(p)
 
         return quantity
+
+    def get_order_items(self):
+        items = {}
+        for key, value in self.menu_order.items():
+            item = Item.objects.get(pk=key)
+            items[item] = {'quantity': value}
+        print(items)
+        return items

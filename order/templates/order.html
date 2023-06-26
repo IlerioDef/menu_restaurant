@@ -6,8 +6,17 @@
 <div>
 {% if menu_order %}
 
+
+
         <div class="border-2"> {{ menu_order.get_order_quantity }}</div>
-        <div class="border-2"> {{ menu_order.get_total_cost }}</div>
+        <div class="border-2"> {{ menu_order.get_total_cost | floatformat:2 }}</div>
+
+{% for item, value in menu_order.get_order_items.items %}
+
+        <div class="border-2">{{item.price}}, {{ item.name }}, {{ value.quantity }} </div>
+
+{% endfor %}
+
 
 {% endif %}
 </div>

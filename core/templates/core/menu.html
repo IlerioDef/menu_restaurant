@@ -7,7 +7,7 @@
             {{ item.name }} {{ item.get_price }} {{ item.category.name }}
         <img src="item.image.url">
         <div>
-            <a href="{% url 'order_add' item.id %} " class="p-3 bg-green-500 rounded-xl">add</a>
+            <a href="{% url 'order_add' item.id %}?next={% url 'order' %} " class="p-3 bg-green-500 rounded-xl">add</a>
         </div>
         </div>
     {% endfor %}
