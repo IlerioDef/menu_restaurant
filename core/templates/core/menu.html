@@ -2,15 +2,41 @@
 {% block content %}
 
 
-    {% for item in menu %}
-        <div class="border-2 flex-row border-red-500 text-center bg-gray-400 w-full">
-            {{ item.name }} {{ item.get_price }} {{ item.category.name }}
-        <img src="item.image.url">
-        <div>
-            <a href="{% url 'order_add' item.id %}?next={% url 'order' %} " class="p-3 bg-green-500 rounded-xl">add</a>
+ <div class="max-w-6xl mx-auto py-2 px-6 xl:px-0">
+            <div class="products flex items-center flex-wrap">
+                {% for item in menu %}
+                <div class="product w-full md:w-1/3 xl:w-1/4 p-6  border-b-2 bg-gray-50 rounded-2xl">
+                        <img src="https://placehold.co/240x240.png" class="object-fill rounded-2xl">
+                    <div class="pt-3  flex-wrap">
+                        <a href="#">{{ item.name }}</a><br>
+
+                        <a href="#" class="text-orange-500 hover:text-orange-800">{{ item.category }}</a>
+
+                    </div>
+                    <div class="flex w-full justify-between">
+                        <p class="pt-1 text-gray-400">{{ item.get_price }}</p>
+                        <a href="{% url 'order_add' item.id %}?next={% url 'order' %} " class=" bg-orange-300 p-1 rounded-full text-white hover:text-yellow-300 hover:bg-orange-600 shadow-lg border-b border-orange-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l3 3m0 0l3-3m-3 3v-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </a>
+
+                    </div>
+
+                        <ul class="pt-1 text-orange-700 inline-flex">Allergens:
+                            {% for allergen in item.get_allergen_list %}
+                            <li class="px-1">{{ allergen }}</li>
+                            {% endfor %}
+                                </ul>
+                </div>
+                {% endfor %}
+
+
+
+
+            </div>
         </div>
-        </div>
-    {% endfor %}
+
 
 
 {% endblock %}

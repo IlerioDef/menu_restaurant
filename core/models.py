@@ -64,11 +64,10 @@ class Item(models.Model):
     def get_allergen_list(self):
         if self.allergen:
 
-            allergen_list = []
-            for e in Allergen.objects.filter(item__id=self.id).get():
-                allergen_list += e
+            allergen_list = Allergen.objects.filter(item__id=self.id)
 
             return allergen_list
+        else: return None
 
     def get_price(self):
         return self.price / 100
