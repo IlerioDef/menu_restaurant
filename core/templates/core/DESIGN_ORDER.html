@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'core/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'core/styles.css' %}">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -34,51 +34,113 @@
         </div>
     </nav>
     <main>
-        <div class="w-full p-10 items-start">
-            <div class="p-4 flex">
-                <div class="left_part border-2 border-yellow-400 w-3/4 p-4">
-                <ul class="border-2 border-blue-600 justify-center">
-                    <li>
-                        <div class="border-2 border-red-500 w-4/5 mt-1 flex-1">
-                            <div class="p-4 bg-gray-400 rounded flex ">
-                                <img src="https://placehold.co/240x240.png" class="object-fill rounded-2xl p-2">
-                                <div class="border-2 border-green-200">
-                                    Description
-                                </div>
-                                <div class="border-2 border-red-300">PRice</div>
-                                <div class="counter border-2  border-green-500 m-1 px-2 flex">
-                                    <a class="bg-gray-400 rounded-l mx-auto">-</a>
-                                    2
-                                    <a class="bg-gray-400 rounded-r px-1">+</a>
-                                </div>
+        <!-- MAIN FLEX BLOCK -->
+        <div class="w-full flex justify-between">
+            <!-- LEFT BLOCK -->
+            <div class="left_part flex  w-full items-between">
+                <ul class="w-full">
+                    <!-- Order Item -->
+                    <li class="p-3">
+                        <div class="flex mx-auto w-2/5">
+                            <div class="flex">
+                                <img src="https://placehold.co/240x240" alt="" class="rounded-l-2xl">
                             </div>
+                            <div class="flex-auto w-full bg-gray-200 items-center rounded-r-2xl pt-2">
+                                <div class="w-full uppercase px-3 font-bold">Super Ultra Fatty Fatfat Burger</div>
+                                <br>
+                                <div class="w-full uppercase px-3">Calories: 666</div>
+                                <div class="w-full uppercase px-3">Allergens: Fish, Chips, Clams</div>
+                                <div class="w-full uppercase px-3">Price: 99.09 INS</div>
+                                <!-- SELECTOR Button -->
+                                <div class="w-full flex justify-end px-4">
+                                    <div class="inline-flex w-20 justify-evenly">
 
+                                        <div class="flex text-md font-bold w-1/3 bg-orange-500 border-2 border-l-2 border-t-2 border-b-2 shadow-2xl rounded-l-full mx-auto p-1 justify-center hover:bg-orange-600">
+                                            <a href="" class="">--</a>
+                                        </div>
+
+                                        <div class=" mx-auto border-t-2 border-b-2 w-1/3 bg-white">12</div>
+                                        <div class="flex text-md font-bold w-1/3 bg-orange-500 border-r-2 border-t-2 border-b-2 shadow-2xl rounded-r-full mx-auto p-1 justify-center hover:bg-orange-600">
+                                            <a href="" class="">+</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </li>
+                    <li class="p-3">
+                        <div class="flex mx-auto w-2/5">
+                            <div class="flex">
+                                <img src="https://placehold.co/240x240" alt="" class="rounded-l-2xl">
+                            </div>
+                            <div class="flex-auto w-full bg-gray-200 items-center rounded-r-2xl pt-2">
+                                <div class="w-full uppercase px-3 font-bold">Super Ultra Fatty Fatfat Burger</div>
+                                <br>
+                                <div class="w-full uppercase px-3">Calories: 666</div>
+                                <div class="w-full uppercase px-3">Allergens: Fish, Chips, Clams</div>
+                                <div class="w-full uppercase px-3">Price: 99.09 INS</div>
+                                <!-- SELECTOR Button -->
+                                <div class="w-full flex justify-end px-4">
+                                    <div class="inline-flex w-20 justify-evenly">
+
+                                        <div class="flex text-md font-bold w-1/3 bg-orange-500 border-2 border-l-2 border-t-2 border-b-2 shadow-2xl rounded-l-full mx-auto p-1 justify-center hover:bg-orange-600">
+                                            <a href="" class="">--</a>
+                                        </div>
+
+                                        <div class=" mx-auto border-t-2 border-b-2 w-1/3 bg-white">12</div>
+                                        <div class="flex text-md font-bold w-1/3 bg-orange-500 border-r-2 border-t-2 border-b-2 shadow-2xl rounded-r-full mx-auto p-1 justify-center hover:bg-orange-600">
+                                            <a href="" class="">+</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+                    </li>
+                    <li class="p-3">
+                        <div class="flex mx-auto w-2/5">
+                            <div class="flex">
+                                <img src="https://placehold.co/240x240" alt="" class="rounded-l-2xl">
+                            </div>
+                            <div class="flex-auto w-full bg-gray-200 items-center rounded-r-2xl pt-2">
+                                <div class="w-full uppercase px-3 font-bold">Super Ultra Fatty Fatfat Burger</div>
+                                <br>
+                                <div class="w-full uppercase px-3">Calories: 666</div>
+                                <div class="w-full uppercase px-3">Allergens: Fish, Chips, Clams</div>
+                                <div class="w-full uppercase px-3">Price: 99.09 INS</div>
+                                <!-- SELECTOR Button -->
+                                <div class="w-full flex justify-end px-4">
+                                    <div class="inline-flex w-20 justify-evenly">
+
+                                        <div class="flex text-md font-bold w-1/3 bg-orange-500 border-2 border-l-2 border-t-2 border-b-2 shadow-2xl rounded-l-full mx-auto p-1 justify-center hover:bg-orange-600">
+                                            <a href="" class="">--</a>
+                                        </div>
+
+                                        <div class=" mx-auto border-t-2 border-b-2 w-1/3 bg-white">12</div>
+                                        <div class="flex text-md font-bold w-1/3 bg-orange-500 border-r-2 border-t-2 border-b-2 shadow-2xl rounded-r-full mx-auto p-1 justify-center hover:bg-orange-600">
+                                            <a href="" class="">+</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                </div>
                         </div>
                     </li>
 
 
-                </ul>
+            </div>
+            <!-- RIGHT BLOCK -->
 
-                </div>
-                <div class="right_part border-2 border-yellow-700 w-1/4">
-                    <div class="total border-4 border-green-500 w-full p-5 rounded-2xl">
-                        <div>Total amount: 3333$</div>
-                        <div>Allergens:
-                        <ul class="flex px-2">
-                            <li class="mx-1"> shrimp </li>
-                            <li class="mx-1"> shrimp </li>
-                            <li class="mx-1"> shrimp </li>
-                        </ul>
-                        </div>
-                        <div>
-                            <a class="border-2 border-amber-500 m-3 px-1 bg-orange-500 rounded-xl hover:bg-orange-700 uppercase">finalize order</a>
-                        </div>
-                    </div>
+            <div class="right_part p-1 mx-auto w-1/5 text-center">
+                <div class="w-full p-1 border-2 border-gray-300 bg-gray-100 rounded-2xl">
+                    <p class="bg-white items-center rounded-t-2xl">Order Total: $3333.33</p><br>
+                    <p class="bg-white items-center">Total Calories: 2560</p><br>
+                    <p class="bg-white items-center">Allergens: Fish, Chips, Guacamole</p><br>
+                    <a href="" class="flex border-2 border-white justify-center shadow-2xl p-3 text-gray-700 bg-orange-400 rounded-b-xl hover:bg-amber-500 hover:text-gray-100">Proceed with Order</a>
                 </div>
             </div>
-
         </div>
-
     </main>
     <footer class="bg-orange-100">
         <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">

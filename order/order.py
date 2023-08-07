@@ -72,3 +72,8 @@ class Order(object):
             items[item] = {'quantity': value}
         print(items)
         return items
+
+
+    def get_order_allergens(self):
+        pass
+
