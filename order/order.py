@@ -50,7 +50,7 @@ class Order(object):
             del self.menu_order[product_id]
             self.save()
 
-    def get_total_cost(self):
+    def get_order_cost(self):
         total_price = 0
         for key in self.menu_order.keys():
             item = Item.objects.get(pk=key)
@@ -73,7 +73,22 @@ class Order(object):
         print(items)
         return items
 
-
     def get_order_allergens(self):
-        pass
+        allergens = []
+        for p in self.menu_order.keys():
+            data = Item.objects.get(pk=p).get_allergen_list()
+            allergens.extend(data)
 
+        allergens = [str(x) for x in allergens]
+
+        return allergens
+
+    def get_order_energy(self):
+        total_energy = 0
+        for k, v in self.menu_order.items():
+            data = Item.objects.get(pk=k).food_energy * v
+            total_energy += data
+
+
+            print("PIII", k,'values',v)
+        return total_energy

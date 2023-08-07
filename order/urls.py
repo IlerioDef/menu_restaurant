@@ -3,5 +3,5 @@ from django.urls import path
 
 urlpatterns = [
     path('', order, name='order'),
-    path('<int:item_id>/', order, name='order_add')
+    path("<int:item_id>/<str:action>/", order, name='order_add'),
 ]

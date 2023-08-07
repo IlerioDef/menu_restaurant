@@ -19,20 +19,20 @@
                             <div class="flex-auto w-full bg-gray-200 items-center rounded-r-2xl pt-2">
                                 <div class="w-full uppercase px-3 font-bold">{{ item.add }}</div>
                                 <br>
-                                <div class="w-full uppercase px-3">Calories: </div>
-                                <div class="w-full uppercase px-3">Allergens: {{ item.get_allergen_list }}</div>
-                                <div class="w-full uppercase px-3">Price: $ {{ item.price | floatformat:2 }} INS</div>
+                                <div class="w-full px-3">Calories: {{ item.food_energy }}</div>
+                                <div class="w-full px-3">Allergens: {{item.get_allergen_list | join:", " }}</div>
+                                <div class="w-full px-3">Price: $ {{ item.get_price | floatformat:2 }}</div>
                                 <!-- SELECTOR Button -->
                                 <div class="w-full flex justify-end px-4">
                                     <div class="inline-flex w-20 justify-evenly">
 
                                         <div class="flex text-md font-bold w-1/3 bg-orange-500 border-2 border-l-2 border-t-2 border-b-2 shadow-2xl rounded-l-full mx-auto p-1 justify-center hover:bg-orange-600">
-                                            <a href="{% url 'order_add' item.id -1 %}?next={% url 'order' %} " class="">--</a>
+                                            <a href="{% url 'order' %}{{ item.id }}/decrease" class="">--</a>
                                         </div>
 
                                         <div class=" mx-auto border-t-2 border-b-2 w-1/3 bg-white">{{ value.quantity }}</div>
                                         <div class="flex text-md font-bold w-1/3 bg-orange-500 border-r-2 border-t-2 border-b-2 shadow-2xl rounded-r-full mx-auto p-1 justify-center hover:bg-orange-600">
-                                            <a href="" class="">+</a>
+                                            <a href="{% url 'order' %}{{ item.id }}/increase?next={% url 'order' %}" class="">+</a>
                                         </div>
 
                                     </div>
@@ -49,9 +49,9 @@
 
             <div class="right_part p-1 mx-auto w-1/5 text-center">
                 <div class="w-full p-1 border-2 border-gray-300 bg-gray-100 rounded-2xl">
-                    <p class="bg-white items-center rounded-t-2xl">Order Total: ${{ menu_order.get_total_cost | floatformat:2 }}</p><br>
-                    <p class="bg-white items-center">Total Calories: 2560</p><br>
-                    <p class="bg-white items-center">Allergens: {{ menu_order }}Fish, Chips, Guacamole</p><br>
+                    <p class="bg-white items-center rounded-t-2xl">Order Total: ${{ menu_order.get_order_cost | floatformat:2 }}</p><br>
+                    <p class="bg-white items-center">Total Calories: {{ menu_order.get_order_energy }}</p><br>
+                    <p class="bg-white items-center">Allergens: {{ menu_order.get_order_allergens | join:", " }} </p><br>
                     <a href="" class="flex border-2 border-white justify-center shadow-2xl p-3 text-gray-700 bg-orange-400 rounded-b-xl hover:bg-amber-500 hover:text-gray-100">Proceed with Order</a>
                 </div>
             </div>
