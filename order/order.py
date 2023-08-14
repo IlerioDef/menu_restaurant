@@ -39,7 +39,6 @@ class Order(object):
         else:
             temp = self.menu_order[product_id]
             self.menu_order[product_id] = temp + quantity
-            print('THIS!', self.menu_order[product_id])
 
         if self.menu_order[product_id] == 0:
             self.remove(product_id)
@@ -70,7 +69,6 @@ class Order(object):
         for key, value in self.menu_order.items():
             item = Item.objects.get(pk=key)
             items[item] = {'quantity': value}
-        print(items)
         return items
 
     def get_order_allergens(self):
@@ -89,6 +87,4 @@ class Order(object):
             data = Item.objects.get(pk=k).food_energy * v
             total_energy += data
 
-
-            print("PIII", k,'values',v)
         return total_energy

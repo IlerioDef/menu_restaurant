@@ -183,3 +183,5 @@ cython_debug/
 /package.json
 /package-lock.json
 /tailwind.config.js
+
+!/.TEMP/
