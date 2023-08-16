@@ -93,12 +93,12 @@ To run this application you wil need the following:
     ```
 7. Make a ```superuser``` for the project
     ```shell
-   python manage.py createsuperuser – username=admin – email=admin@admin.com
+   python manage.py createsuperuser
     ```
-   that will make a superuser named ```admin``` and will promt you to enter the password
+   
 8. The project will be available on
 <a href="0.0.0.0:8000">0.0.0.0:8000</a>
-   and you should populate the project with data(dishes, dish categories etc.) under admin login at <a href="0.0.0.0:8000/admin">0.0.0.0:8000/admin</a>
+   and you should populate the project with data(dishes, dish categories etc.) under superuser login at <a href="0.0.0.0:8000/admin">0.0.0.0:8000/admin</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
