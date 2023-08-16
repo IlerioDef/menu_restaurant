@@ -83,11 +83,11 @@ To run this application you wil need the following:
     Creating docker_django        ... done
     ```
 4. Check that container is run and alive and get its name
-5. Run the shell within the Docker container:
+5. Run the shell within the Docker container by executing this in the terminal:
     ```shell
-    docker exec -it "<container-name-or-id>" sh
+    docker exec -it docker_django sh
     ```
-6. Run the Django ```migrate```
+6. While inside the container, run the Django ```migrate``` command:
     ```shell
     python manage.py migrate
     ```
@@ -105,7 +105,7 @@ To run this application you wil need the following:
 
 
 
-<!-- LICENSE -->
+<!-- LICENSE.txt -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
@@ -127,7 +127,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
 [issues-url]: https://github.com/github_username/repo_name/issues
 [license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/IlerioDef/menu_restaurant/blob/master/LICENSE
+[license-url]: https://github.com/IlerioDef/menu_restaurant/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
