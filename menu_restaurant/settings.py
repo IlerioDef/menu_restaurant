@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!xcz0&3usa#_-62%=6ann$7xoo506ua3%v5r(oqq5q0cvwl57q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 SESSION_COOKIE_AGE = 86400
 ORDER_SESSION_ID = 'order'
@@ -81,22 +81,22 @@ WSGI_APPLICATION = 'menu_restaurant.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {           # SQL Lite
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-# DATABASES = {             #Postgresql
+# DATABASES = {           # SQL Lite
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'menu_restaurantdb',
-#         'USER': 'postgres',
-#         'PASSWORD': 'mysecretpassword',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "postgres",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "db",  # set in docker-compose.yml
+        "PORT": 5432,  # default postgres port
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
