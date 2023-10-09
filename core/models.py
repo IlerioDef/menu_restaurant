@@ -6,7 +6,7 @@ from PIL import Image
 
 
 class Allergen(models.Model):
-    name = models.CharField(max_length=30, null=True)
+    name = models.CharField(max_length=30, blank=True, unique=True, null=True)
 
     def __str__(self):
         return self.name
@@ -23,7 +23,7 @@ class Category(models.Model):
 
 
 class Item(models.Model):
-    name = models.CharField(max_length=255, null=False, blank=False)
+    name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     price = models.IntegerField()
